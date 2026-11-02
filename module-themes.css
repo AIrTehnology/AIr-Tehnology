@@ -1,0 +1,42 @@
+/* Product-page palettes. Shapes, icons, layout and animation remain shared. */
+body[data-module="monitor"]{--cyan:#5fd1d4;--module-rgb:95,209,212;--module-soft:#acebed}
+body[data-module="maintenance"]{--cyan:#94b5ff;--module-rgb:148,181,255;--module-soft:#c6d7ff}
+body[data-module="analytics"]{--cyan:#e4c270;--module-rgb:228,194,112;--module-soft:#f4e1b0}
+body[data-module="intelligence"]{--cyan:#ba98df;--module-rgb:186,152,223;--module-soft:#dfc9f6}
+
+body[data-module]:not([data-module=""]){background:radial-gradient(ellipse at 85% 20%,rgba(var(--module-rgb),.065),transparent 50%),var(--bg)}
+body[data-module]:not([data-module=""]) .button:hover{background:var(--module-soft)}
+body[data-module]:not([data-module=""]) .header-cta,
+body[data-module]:not([data-module=""]) .text-link{border-color:rgba(var(--module-rgb),.45)}
+body[data-module]:not([data-module=""]) .dot{background:var(--cyan);box-shadow:0 0 12px rgba(var(--module-rgb),.4)}
+body[data-module]:not([data-module=""]) .product-follow-window{scrollbar-color:var(--cyan) #0a1d2d}
+body[data-module]:not([data-module=""]) .product-follow-window .function-window{
+ border-color:rgba(var(--module-rgb),.8);
+ box-shadow:0 0 0 1px rgba(var(--module-rgb),.13),0 0 22px rgba(var(--module-rgb),.33),0 0 65px rgba(var(--module-rgb),.2),0 30px 70px #0005;
+ scrollbar-color:var(--cyan) #0a1d2d;
+}
+body[data-module]:not([data-module=""]) .product-follow-window .product-window-backdrop:before{background:radial-gradient(ellipse at center,rgba(var(--module-rgb),.33),rgba(var(--module-rgb),.2) 45%,transparent 74%)}
+body[data-module]:not([data-module=""]) .product-follow-window .product-window-backdrop:after{background:radial-gradient(ellipse at 57% 45%,rgba(var(--module-rgb),.22),rgba(var(--module-rgb),.16) 30%,rgba(var(--module-rgb),.1) 53%,transparent 76%)}
+body[data-module]:not([data-module=""]) .window-chrome{background:linear-gradient(rgba(var(--module-rgb),.09),rgba(var(--module-rgb),.09)),#102331;border-bottom-color:rgba(var(--module-rgb),.28)}
+body[data-module]:not([data-module=""]) .window-dots{color:rgba(var(--module-rgb),.65)}
+body[data-module]:not([data-module=""]) .window-disclaimer{border-color:rgba(var(--module-rgb),.18);background:linear-gradient(rgba(var(--module-rgb),.035),rgba(var(--module-rgb),.035)),#0c202e}
+body[data-module]:not([data-module=""]) .window-section-label{color:var(--cyan)}
+body[data-module]:not([data-module=""]) .concept-visual{color:var(--cyan);border-color:rgba(var(--module-rgb),.3);background:linear-gradient(135deg,rgba(var(--module-rgb),.1),#071a27)}
+body[data-module]:not([data-module=""]) .concept-visual svg>path:first-child{stroke:rgba(var(--module-rgb),.2)}
+body[data-module]:not([data-module=""]) .scan-light{background:rgba(var(--module-rgb),.4);box-shadow:0 0 24px rgba(var(--module-rgb),.47)}
+body[data-module]:not([data-module=""]) .task-mark{border-color:rgba(var(--module-rgb),.55)}
+body[data-module]:not([data-module=""]) .task-lines i{background:rgba(var(--module-rgb),.4)}
+body[data-module]:not([data-module=""]) .gear-mark{color:rgba(var(--module-rgb),.65)}
+body[data-module]:not([data-module=""]) .ai-core{color:var(--module-soft)}
+body[data-module]:not([data-module=""]) .ai-orbit{border-color:rgba(var(--module-rgb),.6)}
+body[data-module]:not([data-module=""]) .ai-node{background:var(--cyan);box-shadow:0 0 10px rgba(var(--module-rgb),.8);animation-name:module-node-pulse}
+body[data-module]:not([data-module=""]) .scenario-rows>div{border-color:rgba(var(--module-rgb),.2)}
+body[data-module]:not([data-module=""]) .scenario-rows strong{color:var(--module-soft)}
+body[data-module]:not([data-module=""]) .showcase-controls{border-color:rgba(var(--module-rgb),.25)}
+body[data-module]:not([data-module=""]) .showcase-controls button{color:var(--module-soft);border-color:rgba(var(--module-rgb),.4);background:rgba(var(--module-rgb),.07)}
+body[data-module]:not([data-module=""]) .showcase-controls button:hover,
+body[data-module]:not([data-module=""]) .showcase-controls button[aria-pressed="true"]:not(.playback){background:var(--cyan);color:#071522;border-color:var(--module-soft)}
+body[data-module]:not([data-module=""]) .cta{border-color:rgba(var(--module-rgb),.4);background:linear-gradient(115deg,rgba(var(--module-rgb),.12),#0b1d2b)}
+body[data-module]:not([data-module=""]) .notice{border-left-color:var(--cyan)}
+@keyframes module-node-pulse{50%{opacity:.3;box-shadow:0 0 20px rgba(var(--module-rgb),.8)}}
+

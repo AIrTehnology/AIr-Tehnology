@@ -175,3 +175,11 @@
 /* Decorative halos must not widen the page. */
 body{overflow-x:clip}
 
+
+.survey-invite{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:320px;flex-shrink:0}
+.survey-invite .survey-invite-thanks{font-size:12px;line-height:1.7;color:#a9c7d4;margin:0}
+.header-survey-invite{max-width:205px;gap:5px}
+.header-survey-invite .survey-invite-thanks{font-size:10px;line-height:1.5}
+.cta .survey-invite .button{margin-top:0}
+@media(max-width:1000px){.header-survey-invite{display:none}}
+@media(max-width:900px){.cta .survey-invite{margin-top:24px;max-width:100%;width:100%}.cta .survey-invite .button{width:100%}.survey-invite .survey-invite-thanks{font-size:13px}}

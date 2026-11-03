@@ -53,3 +53,6 @@
  .survey-extra,.survey-other{font-size:14px}
 }
 .survey-submit .survey-closing-thanks{padding:18px;border-left:2px solid var(--cyan);background:#0d2938;color:#c4e3ec;margin-top:8px;font-size:14px}
+
+.survey-instructions p+p{margin-top:12px}
+

@@ -22,9 +22,9 @@ if(survey){
   return {title:`${q.dataset.question}. ${q.dataset.title}`,text:text||'Bez odgovora'};
  });
  document.querySelector('#survey-download').addEventListener('click',()=>{
-  const rows=['AIr Tehnology — Upitnik',...(context?['Interesovanje: '+context]:[]),'',...answers().flatMap(a=>[a.title,a.text,'']),'Ime i kompanija: '+survey.elements['Ime i kompanija'].value,'Email: '+survey.elements.email.value,'','Lokalna kopija odgovora. Ovaj fajl nije potvrda slanja.'];
+  const rows=['AIr Technology — Upitnik',...(context?['Interesovanje: '+context]:[]),'',...answers().flatMap(a=>[a.title,a.text,'']),'Ime i kompanija: '+survey.elements['Ime i kompanija'].value,'Email: '+survey.elements.email.value,'','Lokalna kopija odgovora. Ovaj fajl nije potvrda slanja.'];
   const url=URL.createObjectURL(new Blob(['\uFEFF'+rows.join('\n')],{type:'text/plain;charset=utf-8'}));
-  const link=document.createElement('a');link.href=url;link.download='AIr-Tehnology-upitnik.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  const link=document.createElement('a');link.href=url;link.download='AIr-Technology-upitnik.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   status.textContent='Kopija je pripremljena za preuzimanje. Odgovori nisu poslati ovom radnjom.';
  });
  const sendButton=document.querySelector('#survey-send');
@@ -32,7 +32,7 @@ if(survey){
  const accessKey=survey.dataset.accessKey.trim();
  let pending=false;
  function makePayload(){
-  const payload={access_key:accessKey,subject:'AIr Tehnology — novi odgovor na upitnik',from_name:'AIr Tehnology upitnik'};
+  const payload={access_key:accessKey,subject:'AIr Technology — novi odgovor na upitnik',from_name:'AIr Technology upitnik'};
   for(const answer of answers())payload[answer.title]=answer.text;
   if(context)payload.Interesovanje=context;
   const name=survey.elements['Ime i kompanija'].value.trim(),email=survey.elements.email.value.trim();
@@ -41,8 +41,8 @@ if(survey){
   return payload;
  }
  function prepareFallback(){
-  const lines=['AIr Tehnology — Upitnik',...(context?['Interesovanje: '+context]:[]),'',...answers().flatMap(a=>[a.title,a.text,'']),'Ime i kompanija: '+survey.elements['Ime i kompanija'].value,'Email: '+survey.elements.email.value];
-  fallback.href='mailto:'+survey.dataset.recipient+'?subject='+encodeURIComponent('AIr Tehnology — odgovor na upitnik')+'&body='+encodeURIComponent(lines.join('\n'));
+  const lines=['AIr Technology — Upitnik',...(context?['Interesovanje: '+context]:[]),'',...answers().flatMap(a=>[a.title,a.text,'']),'Ime i kompanija: '+survey.elements['Ime i kompanija'].value,'Email: '+survey.elements.email.value];
+  fallback.href='mailto:'+survey.dataset.recipient+'?subject='+encodeURIComponent('AIr Technology — odgovor na upitnik')+'&body='+encodeURIComponent(lines.join('\n'));
   fallback.hidden=false;
  }
  survey.addEventListener('input',()=>{if(!fallback.hidden)prepareFallback();});

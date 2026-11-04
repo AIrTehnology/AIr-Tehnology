@@ -2,6 +2,22 @@ const survey=document.querySelector('#survey-form');
 if(survey){
  const questions=[...survey.querySelectorAll('[data-question]')];
  const status=document.querySelector('#survey-status');
+ survey.addEventListener('invalid',event=>{
+  if(survey.dataset.invalidFocus)return;
+  const field=event.target;
+  const question=field.closest('[data-question]');
+  const message=question?'Molimo vas da odgovorite na pitanje '+question.dataset.question+'. Ako niste sigurni, slobodno to navedite.':'Proverite unetu email adresu ili označeno polje.';
+  status.textContent=message;
+  let notice=survey.querySelector('#survey-validation-notice');
+  if(!notice){notice=document.createElement('p');notice.id='survey-validation-notice';notice.setAttribute('role','alert');notice.style.cssText='padding:12px;border-left:3px solid var(--accent,#5fd1d4);color:inherit;';}
+  const container=question||field.closest('label');
+  if(container){container.append(notice);notice.textContent=message;}
+  if(!survey.dataset.invalidFocus){
+   survey.dataset.invalidFocus='true';
+   requestAnimationFrame(()=>{field.focus({preventScroll:true});(question||field).scrollIntoView({behavior:'smooth',block:'center'});delete survey.dataset.invalidFocus;});
+  }
+ },true);
+ survey.addEventListener('input',()=>{const notice=survey.querySelector('#survey-validation-notice');if(notice)notice.remove();});
  const contextNames={monitor:'AIr Monitor',maintenance:'AIr Maintenance',analytics:'AIr Analytics',intelligence:'AIr Intelligence'};
  const context=contextNames[new URLSearchParams(location.search).get('proizvod')];
  if(context){const p=document.querySelector('#survey-context');p.textContent=`Dolazite sa stranice ${context}. Upitnik možete popuniti za sve potrebe vašeg pogona.`;p.hidden=false;}
